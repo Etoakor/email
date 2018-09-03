@@ -76,9 +76,9 @@ def create_email(email_from, email_to, email_Subject, email_text, annex_path, an
     #生成一个空的带附件的邮件实例
     message = MIMEMultipart()
     #将正文以text的形式插入邮件中
-    message.attach(MIMEText("易途人", 'plain', 'utf-8'))
+    message.attach(MIMEText(email_text, 'plain', 'utf-8'))
     #生成发件人名称（这个跟发送的邮件没有关系）
-    message['From'] = Header("易途", 'utf-8')
+    message['From'] = Header(email_from, 'utf-8')
     #生成收件人名称（这个跟接收的邮件也没有关系）
     message['To'] = Header(email_to, 'utf-8')
     #生成邮件主题
